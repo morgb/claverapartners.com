@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Clavera Partners</title>
+  <meta name="description" content="Client results and case studies from Clavera Partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-clavera">CLAVERA</span>
+        <span class="nav-logo-partners">PARTNERS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="experience.html" class="nav-active">Experience</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Experience</p>
+      <h1 class="page-headline">Results that speak for themselves.</h1>
+    </div>
+  </section>
+
+  <!-- PLACEHOLDER -->
+  <section class="content-section">
+    <div class="content-inner">
+      <p class="body-large">Client case studies and testimonials coming soon.</p>
+      <p class="body-text" style="margin-top: 1.5rem; max-width: 580px;">In the meantime, we'd welcome the opportunity to connect directly and share how we've helped companies like yours navigate growth, transition, and transformation.</p>
+      <a href="contact.html" class="btn-primary" style="display: inline-block; margin-top: 2rem;">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">CLAVERA PARTNERS</span>
+      <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
+    </div>
+  </footer>
+
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
