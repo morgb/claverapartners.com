@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance AI Readiness — Clavera Partners</title>
+  <meta name="description" content="Clavera Partners helps finance teams evaluate where AI creates real leverage, build a prioritized roadmap, and move forward with clarity and confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #102A43;
+      min-width: 220px;
+      padding: 0.5rem 0;
+      z-index: 100;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1.2rem;
+      color: #D8E2EC;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-links.open .nav-dropdown-menu { display: block; position: static; background: transparent; padding: 0 0 0 1rem; }
+    .nav-links.open .nav-dropdown-menu a { font-size: 0.8rem; padding: 0.4rem 0; }
+    .service-bullets {
+      margin: 0.75rem 0 1.5rem 1.2rem;
+      padding: 0;
+    }
+    .service-bullets li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #2D3748;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-clavera">CLAVERA</span>
+        <span class="nav-logo-partners">PARTNERS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-active">Services</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services-interim.html">Interim CFO & Finance Leadership</a></li>
+            <li><a href="services-fractional.html">Fractional Finance Leadership</a></li>
+            <li><a href="services-ai.html">Finance AI Readiness</a></li>
+          </ul>
+        </li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Services</p>
+      <h1 class="page-headline">Finance AI Readiness</h1>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+    <div class="content-inner">
+      <p class="body-large">AI is moving faster than most finance teams have been able to respond to, and the gap is rarely about willingness. CFOs are running the business, controllers are closing the books, and nobody has been given the time or the mandate to step back and evaluate where AI actually creates leverage in the finance function and how to get there in a practical, sequenced way. Clavera Partners fills that gap by bringing a CFO-level lens to the evaluation - grounded in how finance teams actually operate rather than what a technology vendor is trying to sell.</p>
+
+      <p class="body-text" style="margin-top:2rem;">Finance AI Readiness engagements are scoped to give organizations a clear picture of where they are, where the real opportunities are, and what it will take to move. Engagements typically include:</p>
+
+      <ul class="service-bullets">
+        <li>Current state assessment of finance workflows, tools, and data infrastructure</li>
+        <li>Identification of highest-leverage AI opportunities by function - FP&amp;A, reporting, close process, collections, and others</li>
+        <li>Honest evaluation of readiness across data quality, team capacity, and existing tool landscape</li>
+        <li>A prioritized roadmap with phased recommendations</li>
+        <li>Hands-on support through initial adoption and change management</li>
+      </ul>
+
+      <p class="body-text">The outcome is a finance team that is moving forward with clarity on what to do, in what order, and why - without the false starts that come from skipping the evaluation work.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <p class="cta-prompt">Curious where your finance team stands? Let's find out.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">CLAVERA PARTNERS</span>
+      <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
