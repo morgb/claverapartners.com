@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Clavera Partners</title>
+  <meta name="description" content="Clavera Partners is a boutique finance advisory firm working with founder-led and PE-backed companies at critical inflection points." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #102A43;
+      min-width: 220px;
+      padding: 0.5rem 0;
+      z-index: 100;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1.2rem;
+      color: #D8E2EC;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-links.open .nav-dropdown-menu { display: block; position: static; background: transparent; padding: 0 0 0 1rem; }
+    .nav-links.open .nav-dropdown-menu a { font-size: 0.8rem; padding: 0.4rem 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-clavera">CLAVERA</span>
+        <span class="nav-logo-partners">PARTNERS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html" class="nav-active">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services-interim.html">Interim CFO & Finance Leadership</a></li>
+            <li><a href="services-fractional.html">Fractional Finance Leadership</a></li>
+            <li><a href="services-ai.html">Finance AI Readiness</a></li>
+          </ul>
+        </li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">About Clavera Partners</p>
+      <h1 class="page-headline">The financial partner founders and investors trust.</h1>
+    </div>
+  </section>
+
+  <!-- FIRM INTRO -->
+  <section class="content-section">
+    <div class="content-inner">
+      <p class="body-large">Clavera Partners is a boutique finance advisory firm working with founder-led and PE-backed companies at critical inflection points. We bring senior financial leadership to organizations ready to build the clarity and strategic rigor that matches where they're going - not just where they've been.</p>
+    </div>
+  </section>
+
+  <!-- OUR BELIEF -->
+  <section class="ruled-section">
+    <div class="ruled-inner">
+      <div class="ruled-rule"></div>
+      <p class="section-label">Our belief</p>
+      <p class="body-text">Great financial leadership isn't about reporting on the past. It's about creating the visibility and confidence to make better decisions about the future. We work best when we're close to the business, close to the numbers, and close to the people who are accountable for both.</p>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="ruled-section">
+    <div class="ruled-inner">
+      <div class="ruled-rule"></div>
+      <p class="section-label">How we work</p>
+      <p class="body-text">We come in at inflection points - a period of rapid growth, a business preparing to transact, a company ready for the rigor its next stage demands - and we stay until the work is done right. We don't drop a framework and move on. We build alongside you, roll up our sleeves when needed, and bring the financial discipline that turns good businesses into ones that scale with confidence.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="ruled-section">
+    <div class="ruled-inner">
+      <div class="ruled-rule"></div>
+      <p class="section-label">The people behind the work</p>
+
+      <div class="team-card">
+        <div class="team-card-left">
+          <div class="team-photo-placeholder">
+            <img src="morgan-headshot.jpg" alt="Morgan Muller, Founder and Principal of Clavera Partners" />
+          </div>
+          <p class="team-name">Morgan Muller</p>
+          <p class="team-title">Founder & Principal</p>
+        </div>
+        <div class="team-card-right">
+          <p class="body-text">Morgan brings over 16 years of senior finance experience across private equity and operating CFO roles. She has built finance functions from the ground up, guided companies through periods of rapid growth and transition, and partnered with founders, CEOs, and boards to create lasting financial clarity.</p>
+          <p class="body-text">Prior to founding Clavera Partners, Morgan served as CFO of IT ServicePoint and VP of Finance at FEV Tutor. Before moving into operating roles, she spent time at Dorilton Capital working directly with portfolio companies - embedded in their operations, driving value creation, and building the financial infrastructure that supported growth and investment outcomes.</p>
+          <p class="body-text">Her earlier career spanned investment banking at Bank of America Merrill Lynch in London and deal advisory at KPMG in New York - experience that shapes how she thinks about capital structure, transactions, and value creation today.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <p class="cta-prompt">Ready to talk about what your business needs?</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">CLAVERA PARTNERS</span>
+      <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
