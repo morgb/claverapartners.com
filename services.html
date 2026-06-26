@@ -4,11 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Clavera Partners</title>
-  <meta name="description" content="Clavera Partners offers Strategic CFO Advisory, Finance Transformation, and Growth & Transition Support for founder-led and PE-backed companies." />
+  <meta name="description" content="Clavera Partners offers Interim CFO & Finance Leadership, Fractional Finance Leadership, and Finance AI Readiness for growth-stage and established businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #102A43;
+      min-width: 220px;
+      padding: 0.5rem 0;
+      z-index: 100;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1.2rem;
+      color: #D8E2EC;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-links.open .nav-dropdown-menu { display: block; position: static; background: transparent; padding: 0 0 0 1rem; }
+    .nav-links.open .nav-dropdown-menu a { font-size: 0.8rem; padding: 0.4rem 0; }
+  </style>
 </head>
 <body>
 
@@ -26,7 +54,14 @@
       </button>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="nav-active">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-active">Services</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services-interim.html">Interim CFO & Finance Leadership</a></li>
+            <li><a href="services-fractional.html">Fractional Finance Leadership</a></li>
+            <li><a href="services-ai.html">Finance AI Readiness</a></li>
+          </ul>
+        </li>
         <li><a href="experience.html">Experience</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
@@ -37,14 +72,14 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <p class="hero-eyebrow">What we do</p>
-      <h1 class="page-headline">Financial leadership, built around you.</h1>
+      <h1 class="page-headline">Financial leadership, built around the engagement.</h1>
     </div>
   </section>
 
   <!-- INTRO -->
   <section class="content-section">
     <div class="content-inner">
-      <p class="body-large">Every engagement is different. We meet companies where they are and build what they need - whether that's strategic oversight, operational discipline, or support through a critical moment of change.</p>
+      <p class="body-large">Every engagement is different - the stage of the business, the urgency of the need, and the depth of support required all vary. Clavera Partners works with organizations that need experienced finance leadership on terms that fit the situation, whether that means stepping in for a defined period, maintaining an ongoing part-time presence, or preparing the finance function for what's coming next.</p>
     </div>
   </section>
 
@@ -52,8 +87,9 @@
   <section class="ruled-section">
     <div class="ruled-inner">
       <div class="ruled-rule"></div>
-      <p class="section-label">Strategic CFO Advisory</p>
-      <p class="body-text">We serve as a financial partner to founders, CEOs, and boards - bringing the clarity and leadership that helps organizations make better decisions, allocate resources effectively, and build toward long-term value.</p>
+      <p class="section-label">Interim CFO & Finance Leadership</p>
+      <p class="body-text">For time-bound needs - a leadership gap, a critical planning cycle, a transaction, or a specific project - where experienced execution matters more than a permanent hire.</p>
+      <a href="services-interim.html" class="btn-secondary" style="margin-top:1.5rem;display:inline-block;">Learn More</a>
     </div>
   </section>
 
@@ -61,8 +97,9 @@
   <section class="ruled-section">
     <div class="ruled-inner">
       <div class="ruled-rule"></div>
-      <p class="section-label">Finance Transformation</p>
-      <p class="body-text">We assess, redesign, and rebuild finance functions that have outgrown their current infrastructure - improving reporting integrity, forecasting accuracy, and operational visibility across the organization.</p>
+      <p class="section-label">Fractional Finance Leadership</p>
+      <p class="body-text">For organizations that need senior finance leadership on an ongoing, part-time basis, with scope and depth calibrated to where the business actually is.</p>
+      <a href="services-fractional.html" class="btn-secondary" style="margin-top:1.5rem;display:inline-block;">Learn More</a>
     </div>
   </section>
 
@@ -70,16 +107,9 @@
   <section class="ruled-section">
     <div class="ruled-inner">
       <div class="ruled-rule"></div>
-      <p class="section-label">Growth & Transition Support</p>
-      <p class="body-text">We work alongside leadership teams during periods of significant change - rapid growth, ownership transition, or preparation for a transaction - providing the financial rigor and support that turns inflection points into outcomes.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <p class="cta-prompt">Not sure where to start? Let's talk.</p>
-      <a href="contact.html" class="btn-primary">Get in Touch</a>
+      <p class="section-label">Finance AI Readiness</p>
+      <p class="body-text">For finance teams that know AI represents a real opportunity but haven't had the time or the right resource to evaluate where to start and how to move forward.</p>
+      <a href="services-ai.html" class="btn-secondary" style="margin-top:1.5rem;display:inline-block;">Learn More</a>
     </div>
   </section>
 
@@ -90,7 +120,6 @@
       <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
     </div>
   </footer>
-
 
   <script>
     document.querySelector('.nav-toggle').addEventListener('click', function() {
