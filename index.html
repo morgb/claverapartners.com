@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clavera Partners</title>
+  <meta name="description" content="Clavera Partners works with founder-led and PE-backed companies navigating growth and transition — delivering the senior financial partnership that creates lasting clarity and confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-clavera">CLAVERA</span>
+        <span class="nav-logo-partners">PARTNERS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services-interim.html">Interim CFO & Finance Leadership</a></li>
+            <li><a href="services-fractional.html">Fractional Finance Leadership</a></li>
+            <li><a href="services-ai.html">Finance AI Readiness</a></li>
+          </ul>
+        </li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-headline">Financial leadership<br>that <em>unlocks value.</em></h1>
+      <p class="hero-sub">Clavera Partners works with founder-led and PE-backed companies navigating growth and transition — delivering the senior financial partnership that creates lasting clarity and confidence.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+  <!-- TAGLINE TRIO -->
+  <section class="pillars">
+    <div class="pillars-inner">
+      <div class="pillar">
+        <span class="pillar-title">Strategic Finance</span>
+        <span class="pillar-rule"></span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-title">Operational Rigor</span>
+        <span class="pillar-rule"></span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-title">Trusted Partnership</span>
+        <span class="pillar-rule"></span>
+      </div>
+    </div>
+  </section>
+  <!-- WHO WE WORK WITH -->
+  <section class="who">
+    <div class="who-inner">
+      <p class="section-label">Who we work with</p>
+      <div class="who-content">
+        <p>We work best with founder-led and PE-backed companies in the mid-market — typically between $10M and $150M in revenue — who are at an inflection point. Maybe you're growing faster than your finance function can keep up. Maybe you've never had senior financial leadership in the room and you're ready to change that. Maybe you're approaching a transaction and need your financial foundation to reflect the business you've built.</p>
+        <p class="who-cta-line">If any of this sounds familiar, let's talk.</p>
+      </div>
+      <a href="contact.html" class="btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">CLAVERA PARTNERS</span>
+      <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
