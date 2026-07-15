@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Clavera Partners</title>
+  <meta name="description" content="Curated reads and commentary on finance, strategy, and the evolving role of AI in the finance function." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ---- SERVICES DROPDOWN ---- */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #1a3a54;
+      min-width: 220px;
+      padding: 0.5rem 0;
+      z-index: 200;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1.2rem;
+      color: #D8E2EC;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+    /* ---- TAG FILTER BAR ---- */
+    .tag-filter {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .tag-filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid #D8E2EC;
+      border-radius: 2px;
+      background: transparent;
+      color: #2D3748;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tag-filter-btn:hover,
+    .tag-filter-btn.active {
+      background: #102A43;
+      color: #F7F5F2;
+      border-color: #102A43;
+    }
+
+    /* ---- INSIGHT CARDS ---- */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .insight-card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid #D8E2EC;
+      align-items: start;
+    }
+
+    .insight-card:last-child {
+      border-bottom: 1px solid #D8E2EC;
+    }
+
+    .insight-image {
+      width: 140px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 2px;
+      background: #D8E2EC;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .insight-image-placeholder {
+      width: 140px;
+      height: 90px;
+      background: #D8E2EC;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .insight-image-placeholder span {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem;
+      color: #4F86C6;
+      opacity: 0.5;
+    }
+
+    .insight-content { flex: 1; }
+
+    .insight-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #4F86C6;
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.05rem;
+      color: #102A43;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .insight-title a {
+      color: #102A43;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .insight-title a:hover { color: #4F86C6; }
+
+    .insight-commentary {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #2D3748;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+
+    .insight-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #4F86C6;
+      border-radius: 2px;
+      color: #4F86C6;
+    }
+
+    .insight-card.hidden { display: none; }
+
+    /* ---- PLACEHOLDER STATE ---- */
+    .insights-placeholder {
+      padding: 4rem 0;
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #4D647A;
+    }
+
+    @media (max-width: 768px) {
+      .insight-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .insight-image,
+      .insight-image-placeholder {
+        width: 100%;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-clavera">CLAVERA</span>
+        <span class="nav-logo-partners">PARTNERS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services-interim.html">Interim CFO & Finance Leadership</a></li>
+            <li><a href="services-fractional.html">Fractional Finance Leadership</a></li>
+            <li><a href="services-ai.html">Finance AI Readiness</a></li>
+          </ul>
+        </li>
+        <li><a href="insights.html" class="nav-active">Insights</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Insights</p>
+      <h1 class="page-headline">What we're reading.</h1>
+    </div>
+  </section>
+
+  <!-- INTRO + FILTER -->
+  <section class="content-section">
+    <div class="content-inner">
+      <p class="body-large" style="margin-bottom: 2.5rem;">A curated selection of articles, research, and perspectives on finance leadership, strategy, and the evolving role of AI in the finance function. Occasional commentary on why it's worth your time.</p>
+
+      <!-- TAG FILTER BAR -->
+      <div class="tag-filter">
+        <button class="tag-filter-btn active" data-filter="all">All</button>
+        <button class="tag-filter-btn" data-filter="Strategy">Strategy</button>
+        <button class="tag-filter-btn" data-filter="FP&A">FP&A</button>
+        <button class="tag-filter-btn" data-filter="AI & Finance">AI & Finance</button>
+        <button class="tag-filter-btn" data-filter="PE & M&A">PE & M&A</button>
+      </div>
+
+      <!-- INSIGHTS LIST -->
+      <div class="insights-list" id="insights-list">
+
+        <!-- 
+          HOW TO ADD A NEW ARTICLE:
+          1. Copy the insight-card block below
+          2. Fill in: data-tags, insight-meta, insight-title link + text, insight-commentary, tag-pills
+          3. For image: set data-url on the img tag to the article URL - the script will auto-fetch the OG image
+          4. Save and upload
+
+        <div class="insight-card" data-tags="Strategy FP&A">
+          <div class="insight-image-wrap">
+            <img class="insight-image og-image" data-url="ARTICLE_URL_HERE" src="" alt="" />
+          </div>
+          <div class="insight-content">
+            <p class="insight-meta">Publication Name - Month Year</p>
+            <p class="insight-title">
+              <a href="ARTICLE_URL_HERE" target="_blank" rel="noopener noreferrer">Article Title Here</a>
+            </p>
+            <p class="insight-commentary">Your 1-2 sentence commentary here. Keep it direct - what does it say and why does it matter.</p>
+            <div class="insight-tags">
+              <span class="tag-pill">Strategy</span>
+              <span class="tag-pill">FP&A</span>
+            </div>
+          </div>
+        </div>
+        -->
+
+        <div class="insight-card" data-tags="AI & Finance Strategy">
+          <div class="insight-image-wrap">
+            <img class="insight-image og-image" data-url="https://www.bcg.com/publications/2026/the-artificial-intelligence-first-finance-function" src="" alt="The AI-First Finance Function" />
+          </div>
+          <div class="insight-content">
+            <p class="insight-meta">BCG Global - June 2026</p>
+            <p class="insight-title">
+              <a href="https://www.bcg.com/publications/2026/the-artificial-intelligence-first-finance-function" target="_blank" rel="noopener noreferrer">The AI-First Finance Function</a>
+            </p>
+            <p class="insight-commentary">Within two to five years, AI agents will handle most of what finance teams do today. When the mechanics become commoditized, the CFO role doesn't shrink - it expands. Value architect isn't just a compelling vision; it's the new baseline for anyone who wants to stay relevant in the seat.</p>
+            <div class="insight-tags">
+              <span class="tag-pill">AI & Finance</span>
+              <span class="tag-pill">Strategy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">CLAVERA PARTNERS</span>
+      <span class="footer-copy">&copy; 2026 Clavera Partners. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Tag filter
+    const filterBtns = document.querySelectorAll('.tag-filter-btn');
+    const cards = document.querySelectorAll('.insight-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.tags.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Auto-fetch OG images via allorigins proxy
+    document.querySelectorAll('.og-image').forEach(img => {
+      const url = img.dataset.url;
+      if (!url) return;
+
+      fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+        .then(r => r.json())
+        .then(data => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data.contents, 'text/html');
+          const ogImage = doc.querySelector('meta[property="og:image"]');
+          if (ogImage && ogImage.content) {
+            img.src = ogImage.content;
+            img.alt = 'Article preview';
+          } else {
+            showPlaceholder(img);
+          }
+        })
+        .catch(() => showPlaceholder(img));
+    });
+
+    function showPlaceholder(img) {
+      const wrap = img.parentElement;
+      wrap.innerHTML = '<div class="insight-image-placeholder"><span>CP</span></div>';
+    }
+  </script>
+
+</body>
+</html>
